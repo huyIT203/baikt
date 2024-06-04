@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base :: base">
+<head>
+    <title>Create/Edit Role</title>
+</head>
+<body>
+<div th:fragment="content">
+    <h1 th:text="${role.id == null ? 'Create Role' : 'Edit Role'}"></h1>
+    <form th:action="@{/roles}" th:object="${role}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div class="form-group">
+            <label for="roleName">Role Name</label>
+            <input type="text" th:field="*{roleName}" class="form-control" id="roleName">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
