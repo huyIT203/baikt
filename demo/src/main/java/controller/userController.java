@@ -45,7 +45,7 @@ public class userController {
         model.addAttribute("user", user);
         model.addAttribute("roles", roleService.getAllRoles());
         return "user_form";
-    }tao la bo m
+    }
 
     @PostMapping("/{id}")
     public String updateUser(@PathVariable Long id, @ModelAttribute User user) {
