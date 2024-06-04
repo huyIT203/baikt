@@ -7,15 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import service.roleservice;
+import service.userservice;
 
 import java.util.List;
 
 public class userController {
     @Autowired
-    private UserService userService;
+    private userservice userService;
 
     @Autowired
-    private RoleService roleService;
+    private roleservice roleService;
 
     @GetMapping
     public String getAllUsers(Model model) {
@@ -43,7 +45,7 @@ public class userController {
         model.addAttribute("user", user);
         model.addAttribute("roles", roleService.getAllRoles());
         return "user_form";
-    }
+    }tao la bo m
 
     @PostMapping("/{id}")
     public String updateUser(@PathVariable Long id, @ModelAttribute User user) {
